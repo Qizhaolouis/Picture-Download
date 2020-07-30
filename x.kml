@@ -1,0 +1,19 @@
+import simplekml
+kml = simplekml.Kml()
+doc = kml.newdocument()
+
+
+
+style1 = simplekml.Style()
+style1.iconstyle.color = simplekml.Color.yellowgreen
+style2 = simplekml.Style()
+style2.iconstyle.color = simplekml.Color.red
+style3 = simplekml.Style()
+style3.linestyle.color = simplekml.Color.darkblue
+
+selected_loc = []
+
+best_r = []
+for i in range(len(route)):
+    best_r.append((selected_point[selected_point['AQU_ID']==route[i]].iloc[0]['Lon'],
+                   selected_point[selected_point['AQU_ID']==route[i]].iloc[0]['Lat']))
